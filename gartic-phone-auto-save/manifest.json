@@ -1,0 +1,40 @@
+{
+  "name": "Gartic Phone Auto Saver",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Save your games of Gartic Phone",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/jszip.min.js",
+      "src/bg/packets-reader.js",
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "Gartic Phone Auto Saver",
+    "default_popup": "src/browser_action/browser_action.html"
+  },
+  "permissions": [
+    "https://garticphone.com/*",
+    "downloads"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://garticphone.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

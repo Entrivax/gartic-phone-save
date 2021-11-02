@@ -1,0 +1,13 @@
+{
+    "include": ["src/**/*.js"],
+    "typeAcquisition": {
+        "include": ["chrome"]
+    },
+    "compilerOptions": {
+        "checkJs": true,
+        "lib": [
+            "DOM",
+            "ES2021"
+        ]
+    }
+}

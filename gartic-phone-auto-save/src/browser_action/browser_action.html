@@ -1,0 +1,38 @@
+<!doctype html>
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+    html, body {
+        font-family: 'Varela Round', sans-serif;
+        font-size: 1em;
+        background: linear-gradient(to top right, #f04842, #4a2ec7);
+        color: #fff;
+    }
+    body {
+        width: 200px;
+    }
+    #state {
+        margin-bottom: 1.5rem;
+    }
+
+    button {
+        padding: 0.6rem 0.5rem;
+        border: 0;
+        background-color: #fff;
+        color: #301a6b;
+        box-shadow: #301a6b 0 0.3rem 0 0;
+        border-radius: 0.4rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #dacff8;
+    }
+</style>
+<script src="./browser_action.js"></script>
+
+<div>
+    <div id="state"></div>
+    <button id="end-session-btn"></button>
+</div>

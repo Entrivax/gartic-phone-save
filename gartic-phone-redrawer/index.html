@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gartic Phone redrawer</title>
+    <script src="./gif.js"></script>
+    <script src="./gphone.js"></script>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="file-selector">
+        <h1>File selection</h1>
+        <input type="file" onchange="fileLoad(this)">
+    </div>
+    <div id="options">
+        <h1>Options</h1>
+        <div>
+            <label>
+                Frame duration
+                <input type="range" min="100" max="5000" step="100" value="1500" id="frame-duration" oninput="this.nextElementSibling.innerText = this.value">
+                <span></span> ms
+            </label>
+        </div>
+        <div>
+            <label>
+                Animation frame duration
+                <input type="range" min="10" max="100" step="10" value="50" id="animation-frame-duration" oninput="this.nextElementSibling.innerText = this.value">
+                <span></span> ms
+            </label>
+        </div>
+        <div>
+            <label>
+                Animation stop duration
+                <input type="range" min="0" max="3000" step="10" value="0" id="animation-stop-duration" oninput="this.nextElementSibling.innerText = this.value">
+                <span></span> ms
+            </label>
+        </div>
+        <div>
+            Animation repeat mode
+            <label>
+                <input name="repeat-mode" type="radio" value="infinite" checked> Infinite
+            </label>
+            <label>
+                <input name="repeat-mode" type="radio" value="boomerang"> Boomerang
+            </label>
+        </div>
+        <script>document.body.querySelectorAll('#options input[type=range]').forEach(input => input.nextElementSibling.innerText = input.value)</script>
+    </div>
+</body>
+</html>
